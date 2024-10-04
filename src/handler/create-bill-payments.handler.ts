@@ -13,13 +13,13 @@ export class HandlerCreateBillPayments {
     billpaymentData : CreateBillPaymentBody
   ): Promise<HTTPResponse> {
 
-    const user = await this.createBillPaymentsUseCase.apply(billpaymentData);
+    const bill_payment = await this.createBillPaymentsUseCase.apply(billpaymentData);
 
     return new HTTPResponse(
       HttpStatus.OK,
       SUCCESS_STATES_MESSAGES.Success.code,
       SUCCESS_STATES_MESSAGES.Success.message,
-      user,
+      bill_payment,
 
     );
   }

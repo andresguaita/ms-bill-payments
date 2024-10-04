@@ -16,5 +16,9 @@ export class BillPaymentsRepository implements IBillPaymentsRepository {
     return this.repository.save(billPayment);
   }
 
+  async findByUserIdAndServiceAccountId(user_id: string, service_account_id: string): Promise<BillPayments[]> {
+    return this.repository.find({ where: { user_id, service_account_id } });
+  }
+
 
 }

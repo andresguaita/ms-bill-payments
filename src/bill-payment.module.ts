@@ -7,6 +7,8 @@ import { CreateBillPaymentsUseCase } from 'domain/src/usecase/create-bill-paymen
 import { HandlerCreateBillPayments } from './handler/create-bill-payments.handler';
 import { BillPaymentsRepository } from './adapter/out/database/bill-payments.repository';
 import { EventBridgeAdapter } from './adapter/out/event-bridge/event-bridge.adapter';
+import { GetBillPaymentsByServiceUseCase } from '../domain/src/usecase/get-bill-payments-by-service.usecase';
+import { HandlerGetBillPaymentsByService } from './handler/get-bill-payments-by-service.handler';
 
 
 
@@ -16,6 +18,7 @@ import { EventBridgeAdapter } from './adapter/out/event-bridge/event-bridge.adap
     TypeOrmModule.forFeature([BillPayments])
   ],
   providers: [ConfigService,    {
+    
     provide: 'CreateBillPaymentsUseCase',
     useFactory: (
       billPaymentsRepository: BillPaymentsRepository,
@@ -28,8 +31,20 @@ import { EventBridgeAdapter } from './adapter/out/event-bridge/event-bridge.adap
     },
     inject: [
       'BillPaymentsRepository'
-    ],
-  },HandlerCreateBillPayments],
+    ]},
+    {
+      provide: 'GetBillPaymentsByServiceUseCase',
+      useFactory: (
+        billPaymentsRepository: BillPaymentsRepository,
+      ) => {
+        return new GetBillPaymentsByServiceUseCase(
+          billPaymentsRepository
+        );
+      },
+      inject: [
+        'BillPaymentsRepository'
+      ],
+  },HandlerCreateBillPayments,HandlerGetBillPaymentsByService],
 
 })
 export class BillPaymentModule {} 
