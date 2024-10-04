@@ -11,7 +11,8 @@ export class BillPaymentsRepository implements IBillPaymentsRepository {
     private readonly repository: Repository<BillPayments>,
   ) {}
 
-  async create(billPayment: BillPayments): Promise<BillPayments> {
+  async save(billPayment: BillPayments): Promise<BillPayments> {
+    console.log('Llego aquiiiiiiii')
     return this.repository.save(billPayment);
   }
 

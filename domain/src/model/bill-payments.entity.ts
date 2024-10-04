@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Entity, Column, PrimaryGeneratedColumn, Index } from 'typeorm';
 
 @Entity('bill_payments') // Nombre de la tabla en la base de datos
 export class BillPayments {
@@ -7,12 +7,14 @@ export class BillPayments {
   id: string; // UUID como identificador primario
 
   @Column({ type: 'varchar' })
+  @Index()
   user_id: string; // UUID del usuario que hizo el pago
 
   @Column({ type: 'varchar', length: 255 })
   service_company_name: string; // Nombre de la compañía de servicios (e.g., Edenor, Metrogas)
 
   @Column({ type: 'varchar', length: 255 })
+  @Index()
   service_account_id: string; // Número de cuenta del servicio
 
   @Column({ type: 'varchar', length: 255 })

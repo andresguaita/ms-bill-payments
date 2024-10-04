@@ -27,6 +27,7 @@ import { EventBridgeAdapter } from './adapter/out/event-bridge/event-bridge.adap
       );
     },
     inject: [
+      'BillPaymentsRepository'
     ],
   },HandlerCreateBillPayments],
 

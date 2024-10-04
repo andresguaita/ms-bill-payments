@@ -3,15 +3,15 @@ import { IsNotEmpty, IsString, IsNumber, IsOptional, IsUUID, IsDateString } from
 export class CreateBillPaymentBody {
   @IsUUID()
   @IsNotEmpty()
-  userId: string;
+  user_id: string;
 
   @IsString()
   @IsNotEmpty()
-  serviceCompanyName: string;
+  service_company_name: string;
 
   @IsString()
   @IsNotEmpty()
-  serviceAccountId: string;
+  service_account_id: string;
 
   @IsString()
   @IsNotEmpty()
@@ -27,11 +27,11 @@ export class CreateBillPaymentBody {
 
   @IsString()
   @IsNotEmpty()
-  paymentMethod: string;
+  payment_method: string;
 
   @IsString()
   @IsOptional()
-  transactionHash?: string;  // Opcional, si no se genera inicialmente
+  transaction_hash?: string;  // Opcional, si no se genera inicialmente
 
   @IsString()
   @IsOptional()
@@ -39,5 +39,5 @@ export class CreateBillPaymentBody {
 
   @IsDateString()
   @IsOptional()
-  createdAt?: string;  // Si no se especifica, se puede generar automáticamente en el servicio
+  created_at?: string;  // Si no se especifica, se puede generar automáticamente en el servicio
 }
