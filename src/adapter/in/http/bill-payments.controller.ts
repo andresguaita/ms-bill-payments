@@ -18,20 +18,22 @@ import {
     ApiTags,
   } from '@nestjs/swagger';
   import {HTTPResponse} from '../../../model/dto/http-response.model';
-import { HandlerGetBillPayments } from '../../../handler/get-bill-payments.handler';
+import { HandlerCreateBillPayments } from '../../../handler/create-bill-payments.handler';
+import { CreateBillPaymentBody } from '../../../model/dto/bill-payment.type';
   
   
 
   @Controller('bill-payments')
   export class BillPaymentsController {
     constructor(
-      private readonly handlerGetBillPayments: HandlerGetBillPayments,
+      private readonly handlerCreateBillPayments: HandlerCreateBillPayments,
     ) {}
   
 
-    @Get('user/services')
-    async getBillPayments(
+    @Post('create')
+    async createBillPayments(
+      @Body() body: CreateBillPaymentBody
     ): Promise<HTTPResponse> {
-      return await this.handlerGetBillPayments.execute('hola');
+      return await this.handlerCreateBillPayments.execute(body);
     }
   }

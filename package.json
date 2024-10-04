@@ -25,6 +25,7 @@
     "test:e2e-cov": "jest --config ./e2e/jest-e2e.json --coverage"
   },
   "dependencies": {
+    "@aws-sdk/client-eventbridge": "^3.664.0",
     "@aws-sdk/client-sqs": "3.414.0",
     "@nestjs/axios": "3.0.2",
     "@nestjs/common": "10.3.8",
