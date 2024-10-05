@@ -107,3 +107,26 @@ root
 - `Dockerfile`: En este archivo se declararán todas las especificaciones técnicas para construir una imagen docker.
 - `.gitignore`: Archivo de git que indicará los archivos que no deben ser tenidos en cuenta a la hora de versionar el repositorio
 - `.dockerignore`: Archivo que ayuda a configurar el contexto de compilación de Docker permitiendo definir reglas para no incluir archivos y/o carpetas en el contexto de compilación.
+
+# 2. Instalación de dependencias
+
+```bash
+$ npm install
+```
+
+# 3. Ejecución
+
+```bash
+
+#up docker database
+$ docker-compose up -d
+
+# development
+$ npm run start
+
+# watch mode
+$ npm run start:dev
+
+# production mode
+$ npm run start:prod
+```
