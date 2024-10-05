@@ -1,10 +1,6 @@
-import { InjectRepository } from "@nestjs/typeorm";
 import { BillPayments } from "../model/bill-payments.entity";
-import { Repository } from "typeorm";
 import { EventBridgeAdapter } from '../../../src/adapter/out/event-bridge/event-bridge.adapter';
-import { IBillPaymentsRepository } from '../interface/bill-payments.repository';
 import { BillPaymentsRepository } from '../../../src/adapter/out/database/bill-payments.repository';
-import { CreateBillPaymentBody } from '../../../src/model/dto/bill-payment.type';
 
 
 class CreateBillPaymentsUseCase {

@@ -43,8 +43,8 @@ import { HandlerGetBillPaymentsByService } from './handler/get-bill-payments-by-
       },
       inject: [
         'BillPaymentsRepository'
-      ],
-  },HandlerCreateBillPayments,HandlerGetBillPaymentsByService],
+      ]}
+      ,HandlerCreateBillPayments,HandlerGetBillPaymentsByService],
 
 })
 export class BillPaymentModule {} 

@@ -32,10 +32,10 @@ import { HandlerGetBillPaymentsByService } from '../../../handler/get-bill-payme
     ) {}
   
     @Get('user/:user_id/services/:service_account_id')
-    public async getBillPaymentsByService(
+     async getBillPaymentsByService(
       @Param('user_id') user_id: string,
       @Param('service_account_id') service_account_id: string,
-    ) {
+    ): Promise<HTTPResponse> {
       return await this.handlerGetBillPaymentsByService.execute(user_id, service_account_id);
     }
 
