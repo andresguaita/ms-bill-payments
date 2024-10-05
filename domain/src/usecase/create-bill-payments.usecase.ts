@@ -14,7 +14,7 @@ class CreateBillPaymentsUseCase {
   ) { }
   async apply(billPaymentData: any): Promise<BillPayments> {
   // Guardamos la transacción en la base de datos
-  const newBillPayment = this.billPaymentsRepository.save(billPaymentData);
+  const newBillPayment = await this.billPaymentsRepository.save(billPaymentData);
    // await this.billPaymentsRepository.create(newBillPayment);
 
     // Después de guardar la transacción, enviamos el evento a EventBridge

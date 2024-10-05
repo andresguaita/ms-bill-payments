@@ -12,7 +12,6 @@ export class BillPaymentsRepository implements IBillPaymentsRepository {
   ) {}
 
   async save(billPayment: BillPayments): Promise<BillPayments> {
-    console.log('Llego aquiiiiiiii')
     return this.repository.save(billPayment);
   }
 

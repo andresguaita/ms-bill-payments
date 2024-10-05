@@ -1,11 +1,14 @@
-import { HttpStatus, Injectable } from '@nestjs/common';
+import { HttpStatus, Inject, Injectable } from '@nestjs/common';
 import { GetBillPaymentsByServiceUseCase } from 'domain/src/usecase/get-bill-payments-by-service.usecase';
 import {SUCCESS_STATES_MESSAGES} from '../common/response-states/success-states.messages';
 import { HTTPResponse } from '../model/dto/http-response.model';
 
 @Injectable()
 export class HandlerGetBillPaymentsByService {
-    constructor(private readonly getBillPaymentsByServiceUseCase: GetBillPaymentsByServiceUseCase) { }
+    constructor(
+        @Inject('GetBillPaymentsByServiceUseCase')
+        private readonly getBillPaymentsByServiceUseCase: GetBillPaymentsByServiceUseCase
+    ) { }
 
     async execute(
         user_id: string,
