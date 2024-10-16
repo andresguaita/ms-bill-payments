@@ -47,8 +47,8 @@ root
 │   │   │  core.module.ts
 │   ├── drivers
 │   │   ├── impl
-│   │   │   |   waybox.driver.impl.ts
-│   │   │  waybox.driver.ts
+│   │   │   |   app.driver.impl.ts
+│   │   │  app.driver.ts
 │   │   │  adapters.module.ts
 │   ├── commons
 │   │   ├── config
